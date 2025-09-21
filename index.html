@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POS - Product Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Product Management System</h1>
+
+  <!-- Navigation Tabs -->
+  <div class="tabs">
+    <button onclick="showTab('products')">Add Products</button>
+    <button onclick="showTab('sales')">Sales Record</button>
+    <button onclick="showTab('profit')">Profit Margin</button>
+  </div>
+
+  <!-- Add Products -->
+  <div id="products" class="tab">
+    <h2>Add Product</h2>
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="productUnits" placeholder="Units">
+    <input type="number" id="productCost" placeholder="Cost Price per Unit">
+    <button onclick="addProduct()">Add Product</button>
+    <h3>All Products</h3>
+    <ul id="productList"></ul>
+  </div>
+
+  <!-- Sales Record -->
+  <div id="sales" class="tab" style="display:none;">
+    <h2>Sales Record</h2>
+    <select id="salesProduct"></select>
+    <input type="number" id="soldPrice" placeholder="Sold Price per Unit">
+    <input type="number" id="soldUnits" placeholder="Units Sold">
+    <select id="platform">
+      <option value="TikTok">TikTok</option>
+      <option value="eBay">eBay</option>
+      <option value="Vinted">Vinted</option>
+      <option value="Cash">Cash</option>
+      <option value="Facebook">Facebook</option>
+      <option value="Depop">Depop</option>
+    </select>
+    <button onclick="addSale()">Add Sale</button>
+    <h3>Sales History</h3>
+    <table id="salesTable" border="1">
+      <tr>
+        <th>Product</th>
+        <th>Units</th>
+        <th>Sold Price</th>
+        <th>Platform</th>
+        <th>Total</th>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Profit Margin -->
+  <div id="profit" class="tab" style="display:none;">
+    <h2>Profit Margin</h2>
+    <table id="profitTable" border="1">
+      <tr>
+        <th>Product</th>
+        <th>Revenue</th>
+        <th>Cost</th>
+        <th>Profit</th>
+      </tr>
+    </table>
+    <button onclick="downloadPDF()">Download PDF</button>
+    <button onclick="downloadExcel()">Download Excel</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
